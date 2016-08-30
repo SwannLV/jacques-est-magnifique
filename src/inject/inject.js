@@ -65,7 +65,7 @@ $(function(){
 						_currentJacques ++;
 						element.innerHTML = replacedText;
 						//element.replaceChild(document.createHtmlNode(replacedText), node);
-						console.log("Tout est magnifique")
+						//console.log("Tout est magnifique")
 					}
 				}
 			}
