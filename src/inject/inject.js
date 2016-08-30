@@ -60,7 +60,7 @@ $(function(){
 					//console.log(word);
 
 					var text = node.nodeValue;
-					var replacedText = text.replace(/Tout/gi, '<a href="' + vortexUrl + '">T.out</a><img src="' + imgURL + '" style="    height: 20px;" />');
+					var replacedText = text.replace(/Tout/gi, '<a href="' + vortexUrl + '">T.out</a><img src="' + imgURL + '" style="    height: 40px;" />');
 
 					if (replacedText !== text) {
 						_currentJacques ++;
@@ -70,13 +70,18 @@ $(function(){
 						if(!_soundPlayed){
 							_soundPlayed = true;
 							var soundURL = chrome.extension.getURL("sounds/bell1.mp3");
-							element.innerHTML += '<audio id="player" src="'+soundURL+'" >';
-							document.getElementById('player').play();
+							element.innerHTML += '<audio id="playerJacques" src="'+soundURL+'" >';
 						}
 					}
 				}
 			}
 		}
+
+		var player = document.getElementById('playerJacques');
+		if (player != undefined){
+			player.play();
+		}
+
 	}
 
 })
