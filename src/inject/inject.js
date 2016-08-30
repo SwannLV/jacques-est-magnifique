@@ -42,7 +42,7 @@ $(function(){
 		for(var i = words.length-1; i--;){
 			if (words[i] === " " || words[i].length < 2) words.splice(i, 1);
 		}
-		console.log(words);
+		//console.log(words);
 
 		for (var i = 0; i < elements.length; i++) {
 			var element = elements[i];
@@ -56,10 +56,10 @@ $(function(){
 					
 					var word = words[Math.floor(Math.random() * words.length)];
 					var vortexUrl = "https://duckduckgo.com/?q=!ducky+tout " + word;
-					console.log(word);
+					//console.log(word);
 
 					var text = node.nodeValue;
-					var replacedText = text.replace(/Tout/gi, '<a href="' + vortexUrl + '">T o u t</a><img src="' + imgURL + '" style="    height: 30px;" />');
+					var replacedText = text.replace(/Tout/gi, '<a href="' + vortexUrl + '">T.out</a><img src="' + imgURL + '" style="    height: 20px;" />');
 
 					if (replacedText !== text) {
 						_currentJacques ++;
