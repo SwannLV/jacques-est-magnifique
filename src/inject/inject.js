@@ -38,8 +38,8 @@ $(function(){
 	if(!_isInit){
 		var elements = document.body.getElementsByTagName('*');
 		var imgURL = chrome.extension.getURL("icons/jacques.png");		
-		var text = /*node.nodeValue || */document.title;
-		var words = text.split(/(\s+)/);
+		var textTitle = /*node.nodeValue || */document.title;
+		var words = textTitle.split(/(\s+)/);
 		for(var i = words.length-1; i--;){
 			if (words[i] === " " || words[i].length < 2) words.splice(i, 1);
 		}
@@ -53,14 +53,11 @@ $(function(){
 
 				if (_currentJacques < _maxJacques && node.nodeType === 3) {
 					
-					//console.log("Node text = " + text);
 					
-					var word = words[Math.floor(Math.random() * words.length)];
-					var vortexUrl = "https://duckduckgo.com/?q=!ducky+tout " + word;
-					//console.log(word);
-
+					var word = words[Math.floor(Math.random() * words.length)];		
+					var vortexUrl = "https://duckduckgo.com/?q=!ducky+tout+" + Math.random().toString(36).substr(2, 1) + "+" + word;
 					var text = node.nodeValue;
-					var replacedText = text.replace(/Tout/gi, '<a href="' + vortexUrl + '">T.out</a><img src="' + imgURL + '" style="    height: 40px;" />');
+					var replacedText = text.replace(/Tout/gi, '<a href="' + vortexUrl + '">T O U T</a><img src="' + imgURL + '" style="height: 40px;" />');
 
 					if (replacedText !== text) {
 						_currentJacques ++;
