@@ -1,0 +1,39 @@
+{
+  "name": "Jacques est magnifique",
+  "version": "0.0.1",
+  "manifest_version": 2,
+  "description": "",
+  "homepage_url": "https://github.com/SwannLV/jacques-est-magnifique",
+  "icons": {
+    "16": "icons/jacques.png",
+    "48": "icons/jacques.png",
+    "128": "icons/jacques.png"
+  },
+  "default_locale": "fr",
+  "background": {
+    "page": "src/bg/background.html",
+    "persistent": true
+  },
+  "options_page": "",
+  "browser_action": {
+    "default_icon": "icons/jacques.png",
+    "default_title": "Jacques",
+    "default_popup": ""
+  },
+  "permissions": [
+    "storage",
+    "tabs",
+    "contextMenus"
+  ],
+  "content_scripts": [
+    {
+      "matches": [
+        "http://*/*", "https://*/*"
+      ],
+      "js": [
+        "js/jquery/jquery.min.js",
+        "src/inject/inject.js"
+      ]
+    }
+  ]
+}
