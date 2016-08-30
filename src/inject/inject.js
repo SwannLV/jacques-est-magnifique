@@ -25,6 +25,7 @@ function GetQueryStringInUrl(name) {
 var _isInit = false;
 var _maxJacques = 10;
 var _currentJacques = 0;
+var _soundPlayed = false;
 
 //init
 $(function(){
@@ -66,6 +67,12 @@ $(function(){
 						element.innerHTML = replacedText;
 						//element.replaceChild(document.createHtmlNode(replacedText), node);
 						//console.log("Tout est magnifique")
+						if(!_soundPlayed){
+							_soundPlayed = true;
+							var soundURL = chrome.extension.getURL("sounds/bell1.mp3");
+							element.innerHTML += '<audio id="player" src="'+soundURL+'" >';
+							document.getElementById('player').play();
+						}
 					}
 				}
 			}
