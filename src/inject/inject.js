@@ -66,7 +66,7 @@ $(function(){
 						//console.log("Tout est magnifique")
 						if(!_soundPlayed){
 							_soundPlayed = true;
-							var soundURL = chrome.extension.getURL("sounds/bell2.mp3");
+							var soundURL = chrome.extension.getURL("sounds/bell3.mp3");
 							element.innerHTML += '<audio id="playerJacques" src="'+soundURL+'" >';
 						}
 					}
